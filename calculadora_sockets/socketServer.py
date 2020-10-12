@@ -92,18 +92,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socketServer:
                     bandera = True
                 except ValueError:
                     print("\n********** ERRO: por favor ingrese un valor correcto **********\n")
-            bandera = False
-            while bandera == False:
-                try:
-                    print("ingrese el primer numero")
-                    n1 = int(input())
-                    print("ingrese el segundo numero")
-                    n2 = int(input())
-                    resultadoP = n1 * n2
-                    print("***** el resultado de la multiplicacion es ", resultadoP, "*****")
-                    bandera = True
-                except ValueError:
-                    print("\n********** ERRO: por favor ingrese un valor correcto **********\n")
         else:
             if parseDatosInt == 4:
                 bandera = False

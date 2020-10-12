@@ -2,6 +2,7 @@
 # socket Cliente
 import socket
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socketCliente:
+
     socketCliente.connect(('127.0.0.1', 9292))
     print('conexion establecida con el servidor')
     #------------------------intercambio de informacion -----------------------
@@ -31,5 +32,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socketCliente:
     print(respuesta, "\n" )
     respuestaResult = socketCliente.recv(1024).decode()
     print("          ",respuestaResult)
-
 
