@@ -49,7 +49,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socketServer:
                     conexion.sendall(resultadoSCod.encode())
                     bandera = True
                 except ValueError:
-                    print("\n********** ERRO: por favor ingrese un valor correcto **********\n")
+                    print("\n********** ERRO: por favor ingrese un valor correcto **********\n".encode())
+                    #conexion.sendall("\n********** ERRO: por favor ingrese un valor correcto **********\n".encode())
         elif parseDatosInt == 2:
             bandera = False
             while bandera == False:
@@ -65,14 +66,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socketServer:
                     parsen2Str = str(n2)
                     print(parsen2Str)
                     parsen2Int = int(parsen2Str)
-                    # print(parsen1Str, "", parsen2Str)
                     resultadoS = parsen1Int - parsen2Int
                     resultadoSCod = str(resultadoS)
                     #conexion.sendall("***** el resultado de la resta es*****".encode())
                     conexion.sendall(resultadoSCod.encode())
                     bandera = True
                 except ValueError:
-                    print("\n********** ERRO: por favor ingrese un valor correcto **********\n")
+                    conexion.sendall("\n********** ERRO: por favor ingrese un valor correcto **********\n".encode())
 
         elif parseDatosInt == 3:
             bandera = False
@@ -89,14 +89,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socketServer:
                     parsen2Str = str(n2)
                     print(parsen2Str)
                     parsen2Int = int(parsen2Str)
-                    # print(parsen1Str, "", parsen2Str)
                     resultadoS = parsen1Int * parsen2Int
                     resultadoSCod = str(resultadoS)
                    # conexion.sendall("***** el resultado de la multiplicacion es*****".encode())
                     conexion.sendall(resultadoSCod.encode())
                     bandera = True
                 except ValueError:
-                    print("\n********** ERRO: por favor ingrese un valor correcto **********\n")
+                    conexion.sendall("\n********** ERRO: por favor ingrese un valor correcto **********\n".encode())
         else:
             if parseDatosInt == 4:
                 bandera = False
@@ -120,9 +119,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socketServer:
                         conexion.sendall(resultadoSCod.encode())
                         bandera = True
                     except ValueError:
-                        print("\n********** ERRO: por favor ingrese un valor correcto **********\n")
+                        conexion.sendall("\n********** ERRO: por favor ingrese un valor correcto **********\n".encode())
                     except ZeroDivisionError:
-                        print("\n********** ERRO: no se puede dividir por cero **********\n")
+                        conexion.sendall("\n********** ERRO: no se puede dividir por cero **********\n".encode())
 
 
 

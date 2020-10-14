@@ -16,6 +16,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socketCliente:
         print(respuestaMenu,"\n")
         # resibe desde teclado la opcion de menu y la envia
         envioM = input().encode()
+       # if not envioM:
+        #    break
         socketCliente.sendall(envioM)
+
 
 
